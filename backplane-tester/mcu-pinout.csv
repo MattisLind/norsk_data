@@ -1,0 +1,49 @@
+reference,package_pin,pin_name,net,function,connection
+U1,1,VBAT,3V3,Supply,C5 100nF to GND
+U1,2,PC13,NC,Unused,Analogue input; no external connection
+U1,3,PC14,NC,Unused,No LSE crystal; analogue input
+U1,4,PC15,NC,Unused,No LSE crystal; analogue input
+U1,5,PD0/OSC_IN,HSE_IN,Oscillator,Y1 8MHz; C8 to GND
+U1,6,PD1/OSC_OUT,HSE_OUT,Oscillator,Y1 8MHz; C9 to GND
+U1,7,NRST,NRST,Reset,R15 pullup; C10 and SW1 to GND; J4.5 and J5.4
+U1,8,VSSA,GND,Supply,Analogue ground
+U1,9,VDDA,VDDA,Supply,R14 0ohm to 3V3; C6/C7 to GND
+U1,10,PA0,ADC_SENSE,ADC1_IN0,MEAS through R13 100ohm; C1 1nF to GND
+U1,11,PA1,DRIVE_UPPER,GPIO/analogue-Z,R9 1k to MEAS
+U1,12,PA2,DRIVE_LOWER,GPIO/analogue-Z,R10 1.5k to MEAS
+U1,13,PA3,VBUS_SENSE,ADC1_IN3,R21/R22 100k/100k divider from USB_5V
+U1,14,PA4,BIAS_UPPER,GPIO/analogue-Z,R11 10k to MEAS
+U1,15,PA5,BIAS_LOWER,GPIO/analogue-Z,R12 15k to MEAS
+U1,16,PA6,STATUS_LED,GPIO output,R18 2.2k then D1 anode; cathode GND
+U1,17,PA7,NC,Unused,Analogue input
+U1,18,PB0,NC,Unused,Analogue input
+U1,19,PB1,USB_ATTACH_N,Open-drain GPIO,R24 10k to Q1 base; low attaches USB
+U1,20,PB2/BOOT1,BOOT1,Boot,R17 10k to GND
+U1,21,PB10,ADDR2,GPIO output,U2-U8 S2 pin 14; R4 100k to GND
+U1,22,PB11,ADDR3,GPIO output,U2-U8 S3 pin 13; R5 100k to GND
+U1,23,VSS_1,GND,Supply,C2 paired with VDD_1
+U1,24,VDD_1,3V3,Supply,C2 100nF to GND
+U1,25,PB12,ADDR4,GPIO output,U9 S0 pin 10; R6 100k to GND
+U1,26,PB13,ADDR5,GPIO output,U9 S1 pin 11; R7 100k to GND
+U1,27,PB14,ADDR6,GPIO output,U9 S2 pin 14; R8 100k to GND
+U1,28,PB15,MUX_DISABLE,GPIO output,U2-U9 E pin 15; R1 10k to 3V3; high disables
+U1,29,PA8,NC,Unused,Analogue input; no external connection
+U1,30,PA9,DEBUG_TX_MCU,USART1_TX,R26 1k to J5.2; debug logs and factory bootloader; default pin mapping
+U1,31,PA10,DEBUG_RX_MCU,USART1_RX,R27 1k to J5.3; R28 10k to 3V3 on MCU side; factory bootloader
+U1,32,PA11,USB_DM_MCU,USB_DM,R19 22ohm to USB_DM_CONN
+U1,33,PA12,USB_DP_MCU,USB_DP,R20 22ohm to USB_DP_CONN
+U1,34,PA13,SWDIO,Debug,J4.2; preserve SWD
+U1,35,VSS_2,GND,Supply,C3 paired with VDD_2
+U1,36,VDD_2,3V3,Supply,C3 100nF to GND
+U1,37,PA14,SWCLK,Debug,J4.3; preserve SWD
+U1,38,PA15,NC,Unused/debug,Release JTAG while preserving SWD; analogue input
+U1,39,PB3,NC,Unused/debug,Release JTAG while preserving SWD; analogue input
+U1,40,PB4,NC,Unused/debug,Release JTAG while preserving SWD; analogue input
+U1,41,PB5,NC,Unused,Analogue input
+U1,42,PB6,NC,Unused,Analogue input
+U1,43,PB7,NC,Unused,Analogue input
+U1,44,BOOT0,BOOT0,Boot,R16 10k to GND; JP1 to 3V3 for ROM boot; J5.5
+U1,45,PB8,ADDR0,GPIO output,U2-U8 S0 pin 10; R2 100k to GND
+U1,46,PB9,ADDR1,GPIO output,U2-U8 S1 pin 11; R3 100k to GND
+U1,47,VSS_3,GND,Supply,C4 paired with VDD_3
+U1,48,VDD_3,3V3,Supply,C4 100nF to GND

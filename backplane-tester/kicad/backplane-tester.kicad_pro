@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "filename": "backplane-tester.kicad_pro",
+    "version": 1
+  },
+  "board": {},
+  "boards": [],
+  "cvpcb": {},
+  "erc": {
+    "erc_exclusions": [],
+    "meta": {
+      "version": 0
+    }
+  },
+  "libraries": {
+    "pinned_footprint_libs": [],
+    "pinned_symbol_libs": []
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      }
+    ],
+    "meta": {
+      "version": 3
+    }
+  },
+  "pcbnew": {},
+  "schematic": {
+    "annotate_start_num": 0,
+    "drawing": {
+      "default_line_thickness": 6.0,
+      "default_text_size": 50.0
+    },
+    "meta": {
+      "version": 1
+    }
+  },
+  "sheets": [
+    [
+      "513486c8-99b7-5e90-933b-53cee4f90e57",
+      "Root"
+    ],
+    [
+      "8f47acca-7597-5ac5-9151-c8c63e3f3fa2",
+      "STM32 controller and support"
+    ],
+    [
+      "bb033bd2-246e-575f-b894-880f589e818f",
+      "USB and 3.3 V supply"
+    ],
+    [
+      "240fe0df-0897-580a-a109-dc931704f9a4",
+      "Stimulus and ADC"
+    ],
+    [
+      "0c305c31-00ff-5d9d-a32f-3bb5b82185e9",
+      "Ground and programming"
+    ],
+    [
+      "f5b71d96-29f3-509f-98e5-dc30d469d02b",
+      "Contact muxes - banks 0-1"
+    ],
+    [
+      "d5296efc-a6e5-5370-8999-b46304200f21",
+      "Contact muxes - banks 2-3"
+    ],
+    [
+      "3434fa4f-c921-5a32-9cb9-dc3c8d861d0c",
+      "Contact muxes - banks 4-5"
+    ],
+    [
+      "6f02a176-9928-5049-a3cc-6476d83a4f12",
+      "Contact bank 6 and root mux"
+    ]
+  ],
+  "text_variables": {}
+}

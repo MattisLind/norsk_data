@@ -6,7 +6,7 @@ routes are collected below under [harness connectors](#harness-connectors-m1-a17
 [discrepancies and open questions](#harness-discrepancies-and-open-questions)
 retain conflicts between drawing readings and reported wiring.
 
-Working transcription, updated 2026-10-26. Use this as a worksheet for tracing
+Working transcription, updated 2026-10-27. Use this as a worksheet for tracing
 the actual panel and cables. It combines schematic readings with Mattis's
 reported physical wiring observations; the assistant has not independently
 measured the hardware. The rectangular control buttons and key switch use the
@@ -23,6 +23,8 @@ Page numbers below are **PDF viewer page numbers, starting at 1**.
 | 1114 | Panel Transceiver | 133; alternative on 132 | 4A14 | D; B/C on 132 |
 | 1115 | Lamp Register | 135; alternative on 134 | 4A15 | E/F; D on 134 |
 | 1121 | Panel Control | 143 | 4A21 | C, D |
+| [1127](1127-transceiver-control.pdf) | Transceiver Control | 153–155 | 4A27 | D; E/F/G; H |
+| [1144](1144-big-mpm-control.pdf) | Big MPM Control | 185, 186 | 4A44 | C/D; E/F |
 
 The panel illustration in ND-06.009.01, section I.5, PDF page 81, supplies the
 physical button names. The circuit sheets supply the electrical signal names.
@@ -38,16 +40,20 @@ Mattis supplied M1, P1-to-A17, A18 and A21 cable traces on 2026-10-26. These
 establish measured routes separately from the schematic signal interpretations.
 **The apparent C-L join and DECODE ADDRESS wiring remain under review;** the new
 traces do not by themselves establish the replacement key switch's positions.
+On 2026-10-27 Mattis identified the auxiliary memory plug as marked `94`,
+with its lowest pair reaching backplane contacts **94/95 at slot 9**. The
+manual/drawing identification and remaining wire checks are recorded below.
 
 - `D`: directly read from a drawing. `M`: physical wiring reported by Mattis.
   `I`: inferred connection or physical function. `?`: unknown or needs
   verification. `NC`: explicitly reported unconnected. Unknown does **not** mean NC.
 - `WL0_0` means data lamp bit 0, schematic logic-phase suffix 0. `WL20_0` is
   a different signal. Preserve the suffixes; do not interpret them as pin numbers.
-- Lowercase `a`/`c` labels are the **1907 drawing** row names. For the new
-  hardware traces, retain Mattis's provisional **a/b** convention: bare `8`
-  means top-row `a8`; `8b` means bottom-row `b8`. Matching bottom-row `b`
-  positions to drawing row `c` is an inference, not a confirmed connector view.
+- Use the **1907 drawing** contact names throughout: **a1–a32 for the upper
+  row and c1–c32 for the lower row**, relative to Mattis's reported viewing
+  position. All 34 reported routes match these names. The schematic has no
+  connector mating-view outline, so the viewing side and left-to-right
+  numbering direction still need a photo or mechanical check.
 - Bare card-terminal numbers below are the **circled terminal references** on
   the 1114/1115/1121 drawings, not IC pin numbers and not 1907 contact numbers.
 - `PB0` etc. are the parenthesized labels on the **1121** drawing. They are not
@@ -92,45 +98,45 @@ serial indicator chain is separate from these parallel data-lamp connections.
 | --- | --- | --- | --- | --- | --- |
 | a1 | NC | — | Not shown on 1907 schematic | — | Not supplied |
 | a2 | NC | — | Not shown on 1907 schematic | — | Not supplied |
-| a3 | GND | Reference | D: explicit ground symbol below SREG_0 output on 1907; also grounded at 1114 terminal 81 | 1114 terminal 81 | M: A18.81 ↔ Euro a3 (raw `3`); I: row correspondence |
-| a4 | WL20_0 | To panel | D: INTERRUPT indicator; active-low LED input | 1114 terminal 95 | M: A18.95 ↔ Euro a4 (raw `4`); I: row correspondence |
-| a5 | WL21_0 | To panel | D: PAGING indicator; active-low LED input | 1114 terminal 93 | M: A18.93 ↔ Euro a5 (raw `5`); I: row correspondence |
-| a6 | SREG_0 | From panel | D: register-selector serial return, through F 7417; 680 ohm pull-up to +5 V | 1114 terminal 83 | M: A18.83 ↔ Euro a6 (raw `6`); I: row correspondence |
-| a7 | SLD_0 | To panel | D: active-low parallel-load strobe; internal LOAD_0 loads the 74L165 inputs | 1114 terminal 79 | M: A18.79 ↔ Euro a7 (raw `7`); I: row correspondence |
-| a8 | WL0_0 | To panel | D: Data bit 0; active-low LED input | 1115 terminal 95 | M: A21.95 ↔ Euro a8 (raw `8`); top row provisionally a |
-| a9 | WL2_0 | To panel | D: Data bit 2; active-low LED input | 1115 terminal 91 | M: A21.91 ↔ Euro a9 (raw `9`); top row provisionally a |
-| a10 | WL1_0 | To panel | D: Data bit 1; active-low LED input | 1115 terminal 93 | M: A21.93 ↔ Euro a10 (raw `10`); top row provisionally a |
-| a11 | WL3_0 | To panel | D: Data bit 3; active-low LED input | 1115 terminal 89 | M: A21.89 ↔ Euro a11 (raw `11`); top row provisionally a |
-| a12 | WL4_0 | To panel | D: Data bit 4; active-low LED input | 1115 terminal 87 | M: A21.87 ↔ Euro a12 (raw `12`); top row provisionally a |
-| a13 | WL5_0 | To panel | D: Data bit 5; active-low LED input | 1115 terminal 85 | M: A21.85 ↔ Euro a13 (raw `13`); top row provisionally a |
-| a14 | WL17_0 | To panel | D: Data bit 17 / address extension; active-low LED input | 1115 terminal 61 | M: A21.61 ↔ Euro a14 (raw `14`); top row provisionally a |
-| a15 | WL16_0 | To panel | D: Data bit 16 / address extension; active-low LED input | 1115 terminal 63 | M: A21.63 ↔ Euro a15 (raw `15`); top row provisionally a |
-| a16 | WL15_0 | To panel | D: Data bit 15; active-low LED input | 1115 terminal 65 | M: A21.65 ↔ Euro a16 (raw `16`); top row provisionally a |
-| a17 | WL13_0 | To panel | D: Data bit 13; active-low LED input | 1115 terminal 69 | M: A21.69 ↔ Euro a17 (raw `17`); top row provisionally a |
-| a18 | WL14_0 | To panel | D: Data bit 14; active-low LED input | 1115 terminal 67 | M: A21.67 ↔ Euro a18 (raw `18`); top row provisionally a |
-| a19 | WL12_0 | To panel | D: Data bit 12; active-low LED input | 1115 terminal 71 | M: A21.71 ↔ Euro a19 (raw `19`); top row provisionally a |
-| a20 | WDOWN_1 | From panel | D: one contact of level-down changeover button; common shown grounded | 1114 terminal 71 | M: A18.71 ↔ Euro a20 (raw `20`); I: row correspondence |
-| a21 | WDOWN_0 | From panel | D: other contact of level-down button; common shown grounded | 1114 terminal 69 | M: A18.69 ↔ Euro a21 (raw `21`); I: row correspondence |
-| a22 | WUP_1 | From panel | D: one contact of level-up changeover button; common shown grounded | 1114 terminal 67 | M: A18.67 ↔ Euro a22 (raw `22`); I: row correspondence |
-| a23 | WUP_0 | From panel | D: other contact of level-up button; common shown grounded | 1114 terminal 65 | M: A18.65 ↔ Euro a23 (raw `23`); I: row correspondence |
+| a3 | GND | Reference | D: explicit ground symbol below SREG_0 output on 1907; also grounded at 1114 terminal 81 | 1114 terminal 81 | M: A18.81 ↔ 1907 a3 |
+| a4 | WL20_0 | To panel | D: INTERRUPT indicator; active-low LED input | 1114 terminal 95 | M: A18.95 ↔ 1907 a4 |
+| a5 | WL21_0 | To panel | D: PAGING indicator; active-low LED input | 1114 terminal 93 | M: A18.93 ↔ 1907 a5 |
+| a6 | SREG_0 | From panel | D: register-selector serial return, through F 7417; 680 ohm pull-up to +5 V | 1114 terminal 83 | M: A18.83 ↔ 1907 a6 |
+| a7 | SLD_0 | To panel | D: active-low parallel-load strobe; internal LOAD_0 loads the 74L165 inputs | 1114 terminal 79 | M: A18.79 ↔ 1907 a7 |
+| a8 | WL0_0 | To panel | D: Data bit 0; active-low LED input | 1115 terminal 95 | M: A21.95 ↔ 1907 a8 |
+| a9 | WL2_0 | To panel | D: Data bit 2; active-low LED input | 1115 terminal 91 | M: A21.91 ↔ 1907 a9 |
+| a10 | WL1_0 | To panel | D: Data bit 1; active-low LED input | 1115 terminal 93 | M: A21.93 ↔ 1907 a10 |
+| a11 | WL3_0 | To panel | D: Data bit 3; active-low LED input | 1115 terminal 89 | M: A21.89 ↔ 1907 a11 |
+| a12 | WL4_0 | To panel | D: Data bit 4; active-low LED input | 1115 terminal 87 | M: A21.87 ↔ 1907 a12 |
+| a13 | WL5_0 | To panel | D: Data bit 5; active-low LED input | 1115 terminal 85 | M: A21.85 ↔ 1907 a13 |
+| a14 | WL17_0 | To panel | D: Data bit 17 / address extension; active-low LED input | 1115 terminal 61 | M: A21.61 ↔ 1907 a14 |
+| a15 | WL16_0 | To panel | D: Data bit 16 / address extension; active-low LED input | 1115 terminal 63 | M: A21.63 ↔ 1907 a15 |
+| a16 | WL15_0 | To panel | D: Data bit 15; active-low LED input | 1115 terminal 65 | M: A21.65 ↔ 1907 a16 |
+| a17 | WL13_0 | To panel | D: Data bit 13; active-low LED input | 1115 terminal 69 | M: A21.69 ↔ 1907 a17 |
+| a18 | WL14_0 | To panel | D: Data bit 14; active-low LED input | 1115 terminal 67 | M: A21.67 ↔ 1907 a18 |
+| a19 | WL12_0 | To panel | D: Data bit 12; active-low LED input | 1115 terminal 71 | M: A21.71 ↔ 1907 a19 |
+| a20 | WDOWN_1 | From panel | D: one contact of level-down changeover button; common shown grounded | 1114 terminal 71 | M: A18.71 ↔ 1907 a20 |
+| a21 | WDOWN_0 | From panel | D: other contact of level-down button; common shown grounded | 1114 terminal 69 | M: A18.69 ↔ 1907 a21 |
+| a22 | WUP_1 | From panel | D: one contact of level-up changeover button; common shown grounded | 1114 terminal 67 | M: A18.67 ↔ 1907 a22 |
+| a23 | WUP_0 | From panel | D: other contact of level-up button; common shown grounded | 1114 terminal 65 | M: A18.65 ↔ 1907 a23 |
 | a24 | NC | — | Not shown on 1907 schematic | — | Not supplied |
-| a25 | WL11_0 | To panel | D: Data bit 11; active-low LED input | 1115 terminal 73 | M: A21.73 ↔ Euro a25 (raw `25`); top row provisionally a |
-| a26 | WL10_0 | To panel | D: Data bit 10; active-low LED input | 1115 terminal 75 | M: A21.75 ↔ Euro a26 (raw `26`); top row provisionally a |
-| a27 | WL9_0 | To panel | D: Data bit 9; active-low LED input | 1115 terminal 77 | M: A21.77 ↔ Euro a27 (raw `27`); top row provisionally a |
-| a28 | WL7_0 | To panel | D: Data bit 7; active-low LED input | 1115 terminal 81 | M: A21.81 ↔ Euro a28 (raw `28`); top row provisionally a |
-| a29 | WL8_0 | To panel | D: Data bit 8; active-low LED input | 1115 terminal 79 | M: A21.79 ↔ Euro a29 (raw `29`); top row provisionally a |
-| a30 | WL6_0 | To panel | D: Data bit 6; active-low LED input | 1115 terminal 83 | M: A21.83 ↔ Euro a30 (raw `30`); top row provisionally a |
+| a25 | WL11_0 | To panel | D: Data bit 11; active-low LED input | 1115 terminal 73 | M: A21.73 ↔ 1907 a25 |
+| a26 | WL10_0 | To panel | D: Data bit 10; active-low LED input | 1115 terminal 75 | M: A21.75 ↔ 1907 a26 |
+| a27 | WL9_0 | To panel | D: Data bit 9; active-low LED input | 1115 terminal 77 | M: A21.77 ↔ 1907 a27 |
+| a28 | WL7_0 | To panel | D: Data bit 7; active-low LED input | 1115 terminal 81 | M: A21.81 ↔ 1907 a28 |
+| a29 | WL8_0 | To panel | D: Data bit 8; active-low LED input | 1115 terminal 79 | M: A21.79 ↔ 1907 a29 |
+| a30 | WL6_0 | To panel | D: Data bit 6; active-low LED input | 1115 terminal 83 | M: A21.83 ↔ 1907 a30 |
 | a31 | NC | — | Not shown on 1907 schematic | — | Not supplied |
 | a32 | NC | — | Not shown on 1907 schematic | — | Not supplied |
 | c1 | NC | — | Not shown on 1907 schematic | — | Not supplied |
 | c2 | NC | — | Not shown on 1907 schematic | — | Not supplied |
-| c3 | GND | Reference | D: explicit ground symbol near SLD input | 1114 terminal 77 | M: A18.77 ↔ Euro b3 (raw `3b`); I: row correspondence |
-| c4 | GND | Reference | D: explicit ground symbol near SOUT input | 1114 terminal 73 | M: A18.73 ↔ Euro b4 (raw `4b`); I: row correspondence |
-| c5 | GND | Reference | D: explicit ground symbol near SW return | 1114 terminal 85 | M: A18.85 ↔ Euro b5 (raw `5b`); I: row correspondence |
-| c6 | SW_0 | From panel | D: data-switch serial return, through F 7417; 680 ohm pull-up to +5 V | 1114 terminal 87 | M: A18.87 ↔ Euro b6 (raw `6b`); I: row correspondence |
-| c7 | SCL_1 | To panel | D: serial clock; two G inverters produce internal CLOCK_1 | 1114 terminal 75 | M: A18.75 ↔ Euro b7 (raw `7b`); I: row correspondence |
-| c8 | SOUT_0 | To panel | D: serial indicator/display data into H/S 74L164 chain, through G inverter | 1114 terminal 91 | M: A18.91 ↔ Euro b8 (raw `8b`); I: row correspondence |
-| c9 | GND | Reference | D: explicit ground symbol near SOUT input | 1114 terminal 89 | M: A18.89 ↔ Euro b9 (raw `9b`); I: row correspondence |
+| c3 | GND | Reference | D: explicit ground symbol near SLD input | 1114 terminal 77 | M: A18.77 ↔ 1907 c3 |
+| c4 | GND | Reference | D: explicit ground symbol near SOUT input | 1114 terminal 73 | M: A18.73 ↔ 1907 c4 |
+| c5 | GND | Reference | D: explicit ground symbol near SW return | 1114 terminal 85 | M: A18.85 ↔ 1907 c5 |
+| c6 | SW_0 | From panel | D: data-switch serial return, through F 7417; 680 ohm pull-up to +5 V | 1114 terminal 87 | M: A18.87 ↔ 1907 c6 |
+| c7 | SCL_1 | To panel | D: serial clock; two G inverters produce internal CLOCK_1 | 1114 terminal 75 | M: A18.75 ↔ 1907 c7 |
+| c8 | SOUT_0 | To panel | D: serial indicator/display data into H/S 74L164 chain, through G inverter | 1114 terminal 91 | M: A18.91 ↔ 1907 c8 |
+| c9 | GND | Reference | D: explicit ground symbol near SOUT input | 1114 terminal 89 | M: A18.89 ↔ 1907 c9 |
 | c10 | NC | — | Not shown on 1907 schematic | — | Not supplied |
 | c11 | NC | — | Not shown on 1907 schematic | — | Not supplied |
 | c12 | NC | — | Not shown on 1907 schematic | — | Not supplied |
@@ -160,8 +166,9 @@ action is still to be checked; the phase suffixes alone do not establish it.
 
 1114 shows grounded terminals next to the serial lines: 73 next to SCL,
 77 next to SLD, 81 next to SREG, 85 next to SW, and 89 next to SOUT. The
-reported A18 routes to panel grounds are included above; the hardware row
-identity and connector viewing orientation remain to be verified.
+reported A18 routes to panel grounds are included above. The signal cross-check
+supports upper row a / lower row c; the mating-view orientation remains to be
+recorded.
 
 ## Separate rectangular-button connector
 
@@ -309,8 +316,8 @@ unconnected position has a metal contact fitted.
 | U | Joined directly to R inside connector; A18.63 route via R | M | No separate P1-list endpoint; I: R-U strap reaches A18.63 / PFINT_0. Distinct from M1.U |
 | V | Joined directly to P inside connector; M1.MM endpoint reported | M; M 2026-10-26 | M: M1.MM ↔ P1 V; I: V-P strap reaches A18.59 / MINH_0 |
 | W | Joined directly to T inside connector; M1.X endpoint reported | M; M 2026-10-26 | M: M1.X ↔ P1 W; I: W-T strap reaches A18.61 / GND |
-| X | Joined directly to S inside connector; M1.Y and auxiliary memory-plug branch reported | M; M 2026-10-26 | M: M1.Y ↔ P1 X; I: X-S strap reaches A18.57 / GND. Extra memory-plug branch annotated `94`; exact numbering unresolved |
-| Y | DEPOSIT make; auxiliary memory-plug branch reported | M; M 2026-10-26 | M: A17.77 / SWDEP_0; extra memory-plug branch annotated `93`; exact numbering unresolved |
+| X | Joined directly to S inside connector; M1.Y and auxiliary memory-plug branch reported | M; M 2026-10-26 | M: M1.Y ↔ P1 X; I: X-S strap reaches A18.57 / GND. MEM-AUX plug marked 94 reaches slot 9, pair 94/95; I: X → 94 / GND; individual continuity unverified |
+| Y | DEPOSIT make; auxiliary memory-plug branch reported | M; M 2026-10-26 | M: A17.77 / SWDEP_0; **MEM-AUX now identified as slot 9, pair 94/95; I: Y → 95 / CMI_0; earlier 93 annotation and DEPOSIT association need recheck** |
 | Z | SINGLE INSTR. make | M; M 2026-10-26 | M: A17.73; schematic signal in A17 table below |
 | a | ENTER REGISTER make | M; M 2026-10-26 | M: A17.75; schematic signal in A17 table below |
 | b | SINGLE INSTR. break | M; M 2026-10-26 | M: A17.71; schematic signal in A17 table below |
@@ -367,7 +374,7 @@ button/lamp observations are retained where they conflict with these routes.
 | SINGLE INSTR switch, phase 1 | SWSING_1 | 71 | PB7_1 | From panel | D: pulled-up input to 14A 74120 | P1 b break → A17.71 | Phase resolved by M route + D |
 | SINGLE INSTR switch, phase 0 | SWSING_0 | 73 | PB8_0 | From panel | D: second pulled-up input to 14A 74120 | P1 Z make → A17.73 | Phase resolved by M route + D |
 | ENTER REG switch | SWENT_0 | 75 | PB9_0 | From panel | D: pulled-up input; I: enter register | P1 a make → A17.75 | M route matches D signal |
-| DEPOSIT switch | SWDEP_0 | 77 | PB10_0 | From panel | D: pulled-up input; I: deposit memory | P1 Y make → A17.77 | Extra memory-plug branch annotated `93`; exact numbering unresolved |
+| DEPOSIT switch | SWDEP_0 | 77 | PB10_0 | From panel | D: pulled-up input; I: deposit memory | P1 Y make → A17.77 | **MEM-AUX now reaches slot 9, pair 94/95; I: Y → 95 / CMI_0; recheck earlier 93 annotation and DEPOSIT association** |
 | SET ADR switch | SWSETA_0 | 79 | PB11_0 | From panel | D: pulled-up input; I: set examine address | P1 N make → A17.79 | M route matches D signal |
 | DECODE ADR switch | SWDEC_0 | 81 | PB12_0 | From panel | D: pulled-up input; also feeds DECODE_0 | **P1 L → A17.81; actual switch/lamp and apparent C-L join under review** | Cable endpoint established; retrace panel switch |
 | DECODE ADR lamp | ? | ? | ? | To panel | **Earlier shared make/lamp and L-A report awaits recheck** | ? | Retrace lamp |
@@ -460,7 +467,7 @@ Lettered M1 endpoints for V, W, X, s, t and v are in the M1 table above.
 | L | 81 | **DECODE wiring under review; apparent C-L join** | SWDEC_0 / decode input; switch wiring unresolved |
 | M | 83 | LOAD break | SWLOAD_1 / complementary load |
 | N | 79 | SET ADDRESS make | SWSETA_0 / set address |
-| Y | 77 | DEPOSIT make | SWDEP_0 / deposit; raw `M1 plugg 93` denotes extra memory-plug branch; exact numbering unresolved |
+| Y | 77 | DEPOSIT make | **SWDEP_0 / deposit; MEM-AUX pair now identified as slot 9 / 94–95; proposed Y → 95 / CMI_0 requires button/continuity recheck** |
 | Z | 73 | SINGLE INSTR. make | SWSING_0 / single instruction |
 | a | 75 | ENTER REGISTER make | SWENT_0 / enter register |
 | b | 71 | SINGLE INSTR. break | SWSING_1 / complementary single instruction |
@@ -477,53 +484,176 @@ plug?). The 1121 sheet labels terminal 74 **IMINH_0 / TW9_0**. The separate
 plug, its pinout and actual onward path are unidentified. **A17.95's cable
 endpoint was not supplied; do not replace the reported A17.93 route with 95.**
 
-### Auxiliary plug to the memory system
+### Auxiliary plug to the memory system: slot 9, pair 94/95
 
-Mattis clarifies that `M1 plugg 94` and `M1 plugg 93` denote an **additional
-small plug intended for the memory system**, connected to the **multiport
-memory in the current machine**. Its purpose is not yet known. It is not a
-numeric contact assignment on the lettered PSU connector M1. Use **MEM-AUX**
-as a worksheet-only name until its actual designation is established.
+**M, 2026-10-27:** the separate plug is marked **94**. The pair in question is
+at the bottom of that plug and reaches **contacts 94/95 in slot 9** of the
+multiport-memory backplane. The plug marking is distinct from the PSU-side
+lettered M1 connector. **MEM-AUX** remains a worksheet-only name.
 
-| Reported branch | Raw annotation retained | Known destination | Remaining identification |
+The [Functional Description](ND-06.009.01_NORD-10_S_Functional_Description.pdf#page=159),
+Figure **II.7.10**, printed page **II-7-18**, PDF page **159**, gives this
+**Big Multiport Memory (BMPM)** crate layout:
+
+| Slot(s) | Card | Function / bank |
+| --- | --- | --- |
+| 1–8 | 1132 | X-bank 32K RAM modules |
+| **9** | **1144** | **Big MPM Control, X-bank controller** |
+| 10–13 | 1142 | X-bank port-address cards A–D |
+| 14–17 | 1143 | X-bank port-data cards A–D |
+| 18/19 | 1145 | X-Y error log; may occupy either position |
+| 20–23 | 1143 | Y-bank port-data cards D–A |
+| 24–27 | 1142 | Y-bank port-address cards D–A |
+| 28 | 1144 | Y-bank controller |
+| 29–32 | 1132 | Y-bank 32K RAM modules |
+
+Section **II.7.9.3.3**, printed **II-7-19**, PDF page **160**, describes 1144
+as arbitrating the bank's ports and generating DRAM refresh requests and
+addresses. This is the documented BMPM layout; the actual card number and
+revision fitted in the machine still need a physical check. The earlier,
+smaller MPM layout in Figure II.7.3 (PDF page 146) is a different configuration.
+
+The [extracted 1144 schematic](1144-big-mpm-control.pdf) contains **both**
+versions of drawing **4A44**: C/D from source PDF page **185** and E/F from
+page **186**, in that order. Both show the same terminal-94/95 assignments:
+
+| 1144 terminal | Signal | Drawing evidence / effect |
+| --- | --- | --- |
+| **94** | **GND** | Connected to the common ground group with terminals 2, 3, 84, 86, 88, 90, 96 and 97 |
+| **95** | **CMI_0** | Input in the ERROR RESET block; 4.7 kohm pull-up and 1 nF capacitor; drives two 15C inverter stages |
+| 62 | MI_0 | Buffered output derived from CMI_0; not a separate wire in the reported 94/95 pair |
+
+**Circuit interpretation (I):** pulling CMI_0 low makes internal MI_1 high.
+MI_1 drives the disable input (pin 15) of the 15B 74157, forcing all four
+outputs **RESRA_0, RESRB_0, RESRC_0 and RESRD_0** low (terminals 25–22).
+The second inverter also makes **MI_0 at terminal 62 low**. The 1142 port-address
+schematic (source PDF pages 180/181, drawing 4A42) takes RESR_0 at terminal 18
+into the request-reset logic. Thus this pair reaches a **common port-request
+reset/control path**. The full expansion of `CMI` is not established by the
+prose examined; do not infer that this signal clears the stored RAM words.
+
+| Reported panel branch | Original annotation retained | Proposed slot-9 endpoint (I) | Remaining check |
 | --- | --- | --- | --- |
-| P1 X, also connected to PSU M1.Y and via X-S to A18.57 / ground | `M1 plugg 94` | MEM-AUX → multiport memory | What 94 numbers; plug contacts; exact memory-side terminal/function |
-| P1 Y, also connected to A17.77 / SWDEP_0 | `M1 plugg 93` | MEM-AUX → multiport memory | What 93 numbers; plug contacts; exact memory-side terminal/function |
+| P1 X, also connected to PSU M1.Y and via X-S to A18.57 / ground | `M1 plugg 94` | 1144 terminal **94 / GND** | Measure individual wire continuity and plug orientation |
+| P1 Y, also connected to A17.77 / SWDEP_0 | `M1 plugg 93` (earlier annotation) | 1144 terminal **95 / CMI_0** | **Earlier 93 annotation is superseded by the reported 94/95 pair; verify Y-to-95 and the button identity** |
 
-Do not infer a join between X and Y: they remain separate branches through the
-plug. Whether A17.74's separately mentioned plug is this same MEM-AUX plug
-is also unresolved. A ground and a DEPOSIT-related branch suggest a control
-connection (I), but do not establish its purpose or electrical levels.
+The X-to-94 / Y-to-95 assignment fits the reported ground and switched-wire
+functions but is **not yet an individually measured mapping**. Do not infer
+a permanent join between X and Y. **The earlier DEPOSIT/P1 Y association now
+needs rechecking against this common request-reset function.** The schematic
+establishes what terminal 95 does, but does not explain why DEPOSIT would
+operate it. Confirm the physical button reached by that lead before assigning
+an FPGA action. Whether A17.74's separately mentioned plug is this same
+MEM-AUX plug remains unresolved.
+
+### Local memory: controller functions and the 94/95 comparison
+
+The documented **NORD-10/S local-memory** arrangement differs from BMPM.
+The [General Description](ND-06.013.01_NORD-10_S_General_Description.pdf#page=24),
+printed **2-3**, PDF page **24**, depicts a single **Rack A: NORD-10/S CPU
+and Local Memory**, with local RAM in **A25–A32**. The
+[Functional Description](ND-06.009.01_NORD-10_S_Functional_Description.pdf#page=122),
+sections **II.5.1–II.5.2**, printed **II-5-1**, PDF page **122**, explicitly
+reserves eight slots in the CPU card crate for local memory and states that
+module address selection is defined by physical position / **backwiring**.
+
+Thus the standard CPU and local memory form one Rack A assembly with internal
+backwiring; the manuals support the recollection of a shared CPU/local-memory
+backplane. They do not establish whether that backwiring is mechanically one
+PCB or several interconnected panels. This differs from the separate BMPM
+crate. There is no separate 1144-style controller in the eight local-memory
+positions. The controller functions are distributed as follows:
+
+| CPU-crate position | Card | Local-memory function / source |
+| --- | --- | --- |
+| **A19** | **1127 Transceiver Control** | Memory-bus arbitration, cycle control, ready timing and timeouts; General Description printed 2-20 / PDF 41; drawing 4A27 |
+| A20 | 1119 Transceiver Address | Address routing and local refresh oscillator/address counter; printed 2-23 / PDF 44; drawing 4A19 |
+| A22 | 1125 Transceiver Data | Data routing, parity/ECC and error handling; printed 2-26 / PDF 47; drawing 4A25 |
+| A25–A32 | 1132 RAM modules | Each module has its own DRAM-cycle timing and response logic; drawing 4A32 |
+
+**The 1144 ground/CMI_0 pair at 94/95 is not reproduced at those terminals on
+the local-memory cards checked.** The schematic assignments are:
+
+| Card | Terminal 94 | Terminal 95 | Drawing / source PDF page |
+| --- | --- | --- | --- |
+| 1144, BMPM comparison | GND | CMI_0 input | 4A44 / 185–186 |
+| **1127, A19** | **MDR_1 output** | **MDR_0 output** | **4A27 / 153–155** |
+| 1119, A20 | MA15_1 input | MA15_0 input | 4A19 / 140 |
+| 1125, A22 | M15_1 input | M15_0 input | 4A25 / 151 |
+| **1132 RAM, A25–A32** | **Joined to 95: negative supply feed** | **Joined to 94: negative supply feed** | **4A32 / 159** |
+
+On 1127 the MDR pair is driven from EDR_1 through a differential line driver
+(19A); it is a memory-data-ready output, not a ground/reset pair. On 1132,
+94 and 95 are joined ahead of the 1.8 kohm resistor feeding the -5 V zener
+regulator. **The reported ground/control plug is not compatible with either
+of these 94/95 pairs.**
+
+The closest corresponding control input on **1127 is terminal 21, IMINH_0**.
+It has a **1 kohm pull-up**. The drawing ties it to both inputs of 3D, used as
+an inverter to produce **MI_1**, then inverts that to **MI_0**. MI_1 feeds the
+CPU/I/O request-control flip-flops. This is an identified inhibit/control
+input, not proof that the MEM-AUX plug was intended for terminal 21.
+
+The schematics support an internal **IMINH_0** route between the panel cards
+and the local-memory control logic:
+
+| Endpoint / connection | Evidence |
+| --- | --- |
+| M1.MM → P1 V-P → A18.59 / MINH_0 | M: previously reported harness routes and connector strap |
+| 1114: terminal 59 → terminals 20 and 74 / IMINH_0 | D: direct pass-through on drawing 4A14, source PDF page 133 |
+| 1121 at A17: terminal 74 / IMINH_0 (TW9_0) | D: input on drawing 4A21, source PDF page 143 |
+| 1127 at A19: terminal 21 / IMINH_0 → internal MI_1/MI_0 | D: input on drawing 4A27, source PDF pages 153–155 |
+
+**I:** A18.74 ↔ A17.74 is supported by both the IMINH_0 name and TW9_0
+alias; the matching IMINH_0 input at A19.21 supports onward transport through
+Rack A backwiring. The card schematics identify the intended endpoints, but a
+wire-wrap schedule or continuity measurement is still required to confirm
+the actual inter-slot wires. Terminal numbers need not match between cards.
+
+**The separate X/Y plug to BMPM slot 9 is not yet established as this same
+net.** A useful continuity check is **1144 terminal 95 / CMI_0 ↔ A17.74 and
+A19.21 / IMINH_0**, including the previously reported separate plug at
+A17.74. This is a proposed check, not a confirmed connection. **If that route
+is found, reconcile it with the earlier P1 Y → A17.77 / DEPOSIT observation**
+rather than merging the two assignments without measurement.
+
+The [1127 extract](1127-transceiver-control.pdf) contains all three supplied
+versions of drawing 4A27: **D**, **E/F/G**, and **H** (source pages **153–155**).
+All show terminal 21 as IMINH_0 and 94/95 as MDR_1/MDR_0.
+
+**Outstanding:** no compatible alternative 94/95 connection for MEM-AUX has
+been identified in the documented NORD-10/S local-memory arrangement. A
+separate or older memory-backplane variant would need its card identities
+and wiring checked before assigning this plug to it.
 
 ### A18: serial interface, level buttons and PSU links
 
 The front-panel Euro connector has **32 positions in each of two rows
-(64 contacts total)**. Preserve the supplied field notation: bare `4` means
-provisional top-row `a4`, while `8b` means provisional bottom-row `b8`.
-The drawings use rows a/c; the proposed b-to-c correspondence below is supported
-by matching signals, but connector orientation remains to be verified.
+(64 contacts total)**. All contacts below use the 1907 names: **upper row a /
+lower row c**, supported by the signal cross-check below. The mating view
+and left-to-right numbering direction are not established by the schematic.
 
 A18.99, .98, .97 and .96 were listed as power contacts with details omitted;
 no voltage or cable destination is assigned here.
 
-| A18 contact (M) | Raw panel contact (M) | Provisional hardware label | 1907 drawing label | Signal / function (D/I) |
-| --- | --- | --- | --- | --- |
-| 95 | 4 | a4 | a4 | WL20_0: INTERRUPT |
-| 93 | 5 | a5 | a5 | WL21_0: PAGING |
-| 91 | 8b | b8 | c8 | SOUT_0: Serial data to panel |
-| 89 | 9b | b9 | c9 | GND: Serial-line ground |
-| 87 | 6b | b6 | c6 | SW_0: Data-switch serial return |
-| 85 | 5b | b5 | c5 | GND: Serial-line ground |
-| 83 | 6 | a6 | a6 | SREG_0: Register-selector serial return |
-| 81 | 3 | a3 | a3 | GND: Explicit ground on 1907; also grounded at 1114 terminal 81 |
-| 79 | 7 | a7 | a7 | SLD_0: Parallel-load strobe |
-| 77 | 3b | b3 | c3 | GND: Serial-line ground |
-| 75 | 7b | b7 | c7 | SCL_1: Serial clock |
-| 73 | 4b | b4 | c4 | GND: Serial-line ground |
-| 71 | 20 | a20 | a20 | WDOWN_1: Level DOWN contact |
-| 69 | 21 | a21 | a21 | WDOWN_0: Level DOWN contact |
-| 67 | 22 | a22 | a22 | WUP_1: Level UP contact |
-| 65 | 23 | a23 | a23 | WUP_0: Level UP contact |
+| A18 contact (M) | 1907 contact | Signal / function (D/I) |
+| --- | --- | --- |
+| 95 | a4 | WL20_0: INTERRUPT |
+| 93 | a5 | WL21_0: PAGING |
+| 91 | c8 | SOUT_0: Serial data to panel |
+| 89 | c9 | GND: Serial-line ground |
+| 87 | c6 | SW_0: Data-switch serial return |
+| 85 | c5 | GND: Serial-line ground |
+| 83 | a6 | SREG_0: Register-selector serial return |
+| 81 | a3 | GND: Explicit ground on 1907; also grounded at 1114 terminal 81 |
+| 79 | a7 | SLD_0: Parallel-load strobe |
+| 77 | c3 | GND: Serial-line ground |
+| 75 | c7 | SCL_1: Serial clock |
+| 73 | c4 | GND: Serial-line ground |
+| 71 | a20 | WDOWN_1: Level DOWN contact |
+| 69 | a21 | WDOWN_0: Level DOWN contact |
+| 67 | a22 | WUP_1: Level UP contact |
+| 65 | a23 | WUP_0: Level UP contact |
 
 A18's four additional reported paths go to P1 rather than the Euro connector:
 
@@ -541,36 +671,62 @@ is not M1 U**: M1.U instead reaches lowercase P1 v. No connection between
 those nets is inferred from the repeated letter. PSU-side voltages/polarities
 remain to be established; MINH/PFINT are schematic function names.
 
-The A18.81 → top-row 3 route agrees with the explicit ground at **1907 a3**
+The A18.81 → 1907 a3 route agrees with the explicit ground at **1907 a3**
 on drawing 7B16; terminal 81 is also grounded on 1114.
 
 ### A21: eighteen parallel data/address indicator lines
 
 A21.99, .98, .97 and .96 were listed as power contacts with details omitted.
-All supplied Euro destinations here are in the provisional top row a. The
-entire eighteen-line sequence matches the 1115 drawing, including its
+All supplied Euro destinations here are in the **upper row, mapped to row a**.
+The entire eighteen-line sequence matches both 1907 and 1115, including its
 non-sequential panel contact order.
 
-| A21 contact (M) | Raw Euro contact (M) | Provisional hardware / drawing label | 1115 signal (D/I) |
+| A21 contact (M) | 1907 contact | 1115 signal (D/I) |
+| --- | --- | --- |
+| 95 | a8 | WL0_0 |
+| 93 | a10 | WL1_0 |
+| 91 | a9 | WL2_0 |
+| 89 | a11 | WL3_0 |
+| 87 | a12 | WL4_0 |
+| 85 | a13 | WL5_0 |
+| 83 | a30 | WL6_0 |
+| 81 | a28 | WL7_0 |
+| 79 | a29 | WL8_0 |
+| 77 | a27 | WL9_0 |
+| 75 | a26 | WL10_0 |
+| 73 | a25 | WL11_0 |
+| 71 | a19 | WL12_0 |
+| 69 | a17 | WL13_0 |
+| 67 | a18 | WL14_0 |
+| 65 | a16 | WL15_0 |
+| 63 | a15 | WL16_0 |
+| 61 | a14 | WL17_0 |
+
+### 1907 upper/lower row cross-check
+
+**Result, 2026-10-27: upper = a and lower = c matches all 34 reported
+connections, with no signal-name or contact-number mismatch.** This combines
+Mattis's physical upper/lower row traces with the schematic labels; it is
+not a new independent continuity measurement.
+
+Sources: 1907 **7B16**, source PDF page **252**; 1114 **4A14**, page **133**;
+1115 **4A15**, page **135**.
+
+| Physical row in reported view | Drawing contacts | Function | Matched card endpoints |
 | --- | --- | --- | --- |
-| 95 | 8 | a8 | WL0_0 |
-| 93 | 10 | a10 | WL1_0 |
-| 91 | 9 | a9 | WL2_0 |
-| 89 | 11 | a11 | WL3_0 |
-| 87 | 12 | a12 | WL4_0 |
-| 85 | 13 | a13 | WL5_0 |
-| 83 | 30 | a30 | WL6_0 |
-| 81 | 28 | a28 | WL7_0 |
-| 79 | 29 | a29 | WL8_0 |
-| 77 | 27 | a27 | WL9_0 |
-| 75 | 26 | a26 | WL10_0 |
-| 73 | 25 | a25 | WL11_0 |
-| 71 | 19 | a19 | WL12_0 |
-| 69 | 17 | a17 | WL13_0 |
-| 67 | 18 | a18 | WL14_0 |
-| 65 | 16 | a16 | WL15_0 |
-| 63 | 15 | a15 | WL16_0 |
-| 61 | 14 | a14 | WL17_0 |
+| Upper / a | a3 | Ground | A18.81 |
+| Upper / a | a4, a5 | WL20_0 INTERRUPT, WL21_0 PAGING | A18.95, A18.93 |
+| Upper / a | a6, a7 | SREG_0 return, SLD_0 load strobe | A18.83, A18.79 |
+| Upper / a | a20–a23 | WDOWN_1, WDOWN_0, WUP_1, WUP_0 | A18.71, .69, .67, .65 |
+| Upper / a | a8–a19, a25–a30 | Eighteen WL0_0–WL17_0 lamp inputs, in the non-sequential order listed above | A21.95 down to A21.61, odd contacts |
+| Lower / c | c3, c4, c5, c9 | Grounds | A18.77, .73, .85, .89 |
+| Lower / c | c6, c7, c8 | SW_0 return, SCL_1 clock, SOUT_0 serial display data | A18.87, .75, .91 |
+
+That is **27 upper-row contacts and 7 lower-row contacts**. The distinction
+between **a6/SREG_0 and c6/SW_0**, and between **a7/SLD_0 and c7/SCL_1**,
+rules out simply exchanging the two rows. The 1907 schematic identifies nets
+by a/c contact labels but does not draw the physical two-row connector view.
+Record the observer's side and the position-1 end before an adapter layout.
 
 ### Harness discrepancies and open questions
 
@@ -579,11 +735,11 @@ non-sequential panel contact order.
 | **Key / panel lock** | **New M: P1 B → A17.93; D: 1121 PLOCK_0 is terminal 95; Mattis confirms this needs double-checking** | **Outstanding: remeasure 93 vs 95, installed board revision and actual role of the white key wire** |
 | **MASTER CLEAR / LOAD lamps** | **Earlier M: j is MASTER CLEAR, k is LOAD; new M: j → A17.59, k → A17.57; D: 59 is LOAD and 57 is MASTER CLEAR; Mattis requests double-check** | **Outstanding: remeasure physical lamps, cable contacts and card revision; neither observation silently replaces the other** |
 | **Apparent C-L join** | **Sketch/earlier M: possible permanent C-L join; new M: C → A17.96 and L → A17.81 / SWDEC_0** | **Retrace C-L and DECODE switch/lamp; a permanent join would join those A17 contacts** |
-| P1 X / auxiliary memory plug | M: X → M1.Y, raw `M1 plugg 94`; extra memory plug confirmed | Identify exact meaning of 94 and memory-side terminal/function |
-| P1 Y / auxiliary memory plug | M: Y → A17.77, raw `M1 plugg 93`; Mattis confirms an extra plug going to the memory system, currently multiport memory | Identify exact meaning of 93 and memory-side terminal/function |
+| P1 X / auxiliary memory plug | M: plug marked 94 reaches slot 9 / pair 94–95; D: 1144 terminal 94 is GND | Verify X-to-94 continuity and installed 1144 revision |
+| **P1 Y / auxiliary memory plug** | **Earlier M: Y → A17.77 / DEPOSIT, annotation 93; new M: slot 9 / pair 94–95; D: 1144 terminal 95 is CMI_0, a common request-reset control** | **Verify Y-to-95 continuity, physical button identity and reason for the DEPOSIT/reset association** |
 | PFINT onward path | M: A18.63 → P1 R-U; M1.U → P1 v is a separate net | Trace beyond P1 U; no uppercase-P1-U to M1.U connection supplied |
 | A17.74 separate plug | New M: goes to a separate plug?; D: IMINH_0 / TW9_0 | Identify plug and onward path; do not assume a measured connection to A18.59 |
-| Euro row names / view | Hardware convention provisionally a/b; drawing convention a/c; all supplied signal positions agree under b ↔ c | Confirm row identity and viewing orientation before adapter layout |
+| Euro row names / view | Upper = a, lower = c matches all 34 reported routes; a/c contact names used throughout | Record viewing side and left-to-right numbering direction before adapter layout |
 | Power rails | M1 colours supplied; A18/A21 contacts 99..96 omitted as power; A17 C reaches 96 | Measure/document voltages and returns; colours alone do not identify rails |
 | Replacement key switch | Intended unlocked state described earlier; no new key-position continuity measurements supplied | Verify physical LOCKED/UNLOCKED positions and power-down lockout |
 
@@ -671,10 +827,10 @@ entering its receiving shift registers.
 | Separate button/key connector identity and count | M: rectangular P1, 56 poles; full label sequence recorded above |
 | P1 connector mating/wiring view and wire colours | M/D sketch: B white, C black, s grey/blue, t white/blue, v red/brown, A green at START lamp, apparent L pink/brown; connector view ? |
 | P1 connector links | **M: A-E, C-H, P-V, R-U, S-X and T-W confirmed inside connector; apparent C-L harness join provisional** |
-| 1907 connector type, contact count, and numbering view | M: 32 positions × 2 rows = 64 contacts; top a / bottom b provisional; drawing uses a/c; mating view ? |
+| 1907 connector type, contact count, and numbering view | M: 32 positions × 2 rows = 64 contacts; I: upper a / lower c matches all 34 reported routes; mating view and numbering direction still to record |
 | +5 V feed contact(s), ground returns, and any separate power leads | ? |
 | Actual 1114/1115/1121 revisions, if using them for comparison | ? |
-| Continuity of each a/c contact to the named interface-card terminal | M: A18/A21 tables now record 16 Euro signal/ground routes and 18 lamp routes; a/b-to-a/c row identity remains provisional |
+| Continuity of each a/c contact to the named interface-card terminal | M: 16 A18 routes and 18 A21 lamp routes; D/I: all 34 match upper a / lower c; a/c contact names used throughout |
 | Continuity of PB-labeled signals to actual button-connector contacts | **M: A17 table now resolves most routes and complementary phases; j/k lamps and B/93 vs PLOCK/95 remain discrepant** |
 | Make/break contacts for the white buttons | **M: recorded above; MASTER CLEAR break and all DECODE ADDRESS assignments to recheck** |
 | DECODE ADDRESS switch and lamp | **Recheck common, make, break and lamp leads; previous L/shared-terminal assignment questioned by apparent C-L join** |
@@ -690,8 +846,8 @@ entering its receiving shift registers.
 | Button lamp ratings and drive paths | **START green return now A; DECODE lamp under review; all lamp ratings and card-side drive paths remain open** |
 | Red button name | Confirmed START; same unlabelled red button in POWER section, called POWER on hand sketch |
 | P1 unconnected positions | M: l, m, n, p, r, u; all positions w through NN; uppercase L is distinct from lowercase l |
-| Remaining unidentified P1 signal functions | **Three A18-to-M1 strap paths traced; PFINT onward beyond P1 U unknown. s/t/v semantics, C/B voltages/functions, C-L, lamp swap, 93/95 and auxiliary memory-plug numbering remain open** |
-| Auxiliary memory-system plug | M: extra plug currently goes to multiport memory; P1 X/annotation 94 and P1 Y/annotation 93 branches; actual designation, numbering and purpose to establish |
+| Remaining unidentified P1 signal functions | **Three A18-to-M1 strap paths traced; PFINT onward beyond P1 U unknown. s/t/v semantics, C/B voltages/functions, C-L, lamp swap, A17 93/95 and auxiliary memory-plug wire orientation/button identity remain open** |
+| Auxiliary memory-system plug | M: marked 94, lowest pair at slot 9 / 94–95; D: BMPM slot 9 is 1144, terminal 94 GND and 95 CMI_0; I: X → 94 and Y → 95; verify individual wires, button identity and fitted revision |
 | Any unlisted populated contacts, straps, cable joins, or modifications | ? |
 
 This worksheet specifies no FPGA package pins or adapter component values.

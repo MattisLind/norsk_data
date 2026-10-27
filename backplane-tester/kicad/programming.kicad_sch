@@ -1,0 +1,2150 @@
+(kicad_sch
+  (version 20250114)
+  (generator "backplane_tester_design")
+  (uuid 22a3d616-363f-502b-a296-a38935e0743d)
+  (paper "A3")
+  (title_block
+    (title "Ground and programming")
+    (date "2026-10-27")
+    (rev "C")
+    (company "Norsk Data restoration")
+    (comment 1 "Bare backplane only. Connector mechanics and physical pin mapping TBD.")
+  )
+  (lib_symbols
+    (symbol "BackplaneTester:Conn_01x01"
+      (pin_names
+        (offset 1.016)
+        (hide yes)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "J"
+        (at 0 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "Conn_01x01"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "connector"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "Conn_01x01_1_1"
+        (rectangle
+          (start -1.27 1.27)
+          (end 1.27 -1.27)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+        (rectangle
+          (start -1.27 0.127)
+          (end 0 -0.127)
+          (stroke
+            (width 0.1524)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (pin passive line
+          (at -5.08 0 0)
+          (length 3.81)
+          (name "Pin_1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "BackplaneTester:Conn_01x05"
+      (pin_names
+        (offset 1.016)
+        (hide yes)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "J"
+        (at 0 7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "Conn_01x05"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "connector"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "Connector*:*_1x??_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "Conn_01x05_1_1"
+        (rectangle
+          (start -1.27 6.35)
+          (end 1.27 -6.35)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type background)
+          )
+        )
+        (rectangle
+          (start -1.27 5.207)
+          (end 0 4.953)
+          (stroke
+            (width 0.1524)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (rectangle
+          (start -1.27 2.667)
+          (end 0 2.413)
+          (stroke
+            (width 0.1524)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (rectangle
+          (start -1.27 0.127)
+          (end 0 -0.127)
+          (stroke
+            (width 0.1524)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (rectangle
+          (start -1.27 -2.413)
+          (end 0 -2.667)
+          (stroke
+            (width 0.1524)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (rectangle
+          (start -1.27 -4.953)
+          (end 0 -5.207)
+          (stroke
+            (width 0.1524)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (pin passive line
+          (at -5.08 5.08 0)
+          (length 3.81)
+          (name "Pin_1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -5.08 2.54 0)
+          (length 3.81)
+          (name "Pin_2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -5.08 0 0)
+          (length 3.81)
+          (name "Pin_3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "3"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -5.08 -2.54 0)
+          (length 3.81)
+          (name "Pin_4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "4"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at -5.08 -5.08 0)
+          (length 3.81)
+          (name "Pin_5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "5"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "BackplaneTester:LED"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 1.016)
+        (hide yes)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "D"
+        (at 0 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "LED"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Light emitting diode"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Sim.Pins" "1=K 2=A"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "LED diode"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "LED_0_1"
+        (polyline
+          (pts
+            (xy -3.048 -0.762)
+            (xy -4.572 -2.286)
+            (xy -3.81 -2.286)
+            (xy -4.572 -2.286)
+            (xy -4.572 -1.524)
+          )
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy -1.778 -0.762)
+            (xy -3.302 -2.286)
+            (xy -2.54 -2.286)
+            (xy -3.302 -2.286)
+            (xy -3.302 -1.524)
+          )
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy -1.27 0)
+            (xy 1.27 0)
+          )
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy -1.27 -1.27)
+            (xy -1.27 1.27)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+        (polyline
+          (pts
+            (xy 1.27 -1.27)
+            (xy 1.27 1.27)
+            (xy -1.27 0)
+            (xy 1.27 -1.27)
+          )
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "LED_1_1"
+        (pin passive line
+          (at -3.81 0 0)
+          (length 2.54)
+          (name "K"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 3.81 0 180)
+          (length 2.54)
+          (name "A"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "BackplaneTester:R"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "R"
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "R"
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "Resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "R res resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "R_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "R_0_1"
+        (rectangle
+          (start -1.016 -2.54)
+          (end 1.016 2.54)
+          (stroke
+            (width 0.254)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "R_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+    (symbol "BackplaneTester:TestPoint"
+      (pin_numbers
+        (hide yes)
+      )
+      (pin_names
+        (offset 0.762)
+        (hide yes)
+      )
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "TP"
+        (at 0 6.858 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Value" "TestPoint"
+        (at 0 5.08 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+        )
+      )
+      (property "Footprint" ""
+        (at 5.08 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Datasheet" "~"
+        (at 5.08 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "Description" "test point"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_keywords" "test point tp"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (property "ki_fp_filters" "Pin* Test*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27)
+          )
+          (hide yes)
+        )
+      )
+      (symbol "TestPoint_0_1"
+        (circle
+          (center 0 3.302)
+          (radius 0.762)
+          (stroke
+            (width 0)
+            (type default)
+          )
+          (fill
+            (type none)
+          )
+        )
+      )
+      (symbol "TestPoint_1_1"
+        (pin passive line
+          (at 0 0 90)
+          (length 2.54)
+          (name "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)
+              )
+            )
+          )
+        )
+      )
+      (embedded_fonts no)
+    )
+  )
+  (text "J3 is ground only / both boards controlled and synchronized over USB"
+    (at 20.32 17.78 0)
+    (effects
+      (font
+        (size 2 2)
+      )
+      (justify left)
+    )
+    (uuid 598a9fd7-7a2f-5af8-bf07-ac2a78ca23a9)
+  )
+  (wire
+    (pts
+      (xy 49.53 54.61)
+      (xy 41.91 54.61)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid eafcfcee-9f0a-5877-a9c7-05ba226970bf)
+  )
+  (global_label "GND"
+    (shape bidirectional)
+    (at 41.91 54.61 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 794985be-aa58-58dd-82ee-43da6dcff57e)
+  )
+  (symbol
+    (lib_id "BackplaneTester:Conn_01x01")
+    (at 54.61 54.61 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 68ccde09-2a28-5bfe-af2a-de3ce89b1a30)
+    (property "Reference" "J3"
+      (at 59.69 49.53 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "INTER-BOARD GND"
+      (at 59.69 52.07 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
+      (at 54.61 54.61 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 54.61 54.61 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid e6199467-761d-5c2f-8df8-bd72276feabe)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "J3")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (text "Single wire J3.1 to J3.1 on the other board.\nNo inter-board UART, sync or supply signal."
+    (at 90.17 49.53 0)
+    (effects
+      (font
+        (size 1.5 1.5)
+      )
+      (justify left)
+    )
+    (uuid 04f3ffbf-6817-57fe-9822-84bc7ebfdf9d)
+  )
+  (wire
+    (pts
+      (xy 59.69 110.49)
+      (xy 52.07 110.49)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 4ab985cb-49ac-54c6-9d73-32783da51b00)
+  )
+  (global_label "GND"
+    (shape bidirectional)
+    (at 52.07 110.49 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 6e586372-8648-510a-89f4-fb622aa19bd5)
+  )
+  (wire
+    (pts
+      (xy 59.69 113.03)
+      (xy 52.07 113.03)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 552605a2-9a17-57f5-9ed0-51ba7eaca845)
+  )
+  (global_label "DEBUG_TX"
+    (shape bidirectional)
+    (at 52.07 113.03 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid bf089136-8ad3-500f-8016-f7bd97b562ce)
+  )
+  (wire
+    (pts
+      (xy 59.69 115.57)
+      (xy 52.07 115.57)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 330029f8-0aa4-59d1-8bbe-93945e01e79d)
+  )
+  (global_label "DEBUG_RX"
+    (shape bidirectional)
+    (at 52.07 115.57 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 1a0fae46-958b-5140-944d-9f062166b213)
+  )
+  (wire
+    (pts
+      (xy 59.69 118.11)
+      (xy 52.07 118.11)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid ee67baf5-d1f8-5465-99cf-b1ab0481fcaa)
+  )
+  (global_label "NRST"
+    (shape bidirectional)
+    (at 52.07 118.11 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid b8c5552a-a93a-58aa-b807-ba504fa19abf)
+  )
+  (wire
+    (pts
+      (xy 59.69 120.65)
+      (xy 52.07 120.65)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid bfa17689-be9f-5946-b90e-e05608fc78c3)
+  )
+  (global_label "BOOT0"
+    (shape bidirectional)
+    (at 52.07 120.65 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 966795ed-be5b-575d-b68a-991718ff0282)
+  )
+  (symbol
+    (lib_id "BackplaneTester:Conn_01x05")
+    (at 64.77 115.57 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 940d2423-88d0-5d16-9cc3-3a267a59cb6a)
+    (property "Reference" "J5"
+      (at 69.85 110.49 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "USART1 DEBUG / ROM BOOT"
+      (at 69.85 113.03 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
+      (at 64.77 115.57 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 64.77 115.57 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 277b089d-4038-5479-a12a-36411979eb20)
+    )
+    (pin "2"
+      (uuid 452a3afb-37a2-5e0d-9425-b32336723a4e)
+    )
+    (pin "3"
+      (uuid ac802f16-af79-52c5-9053-5446a5b8f95b)
+    )
+    (pin "4"
+      (uuid 94bc708a-b7be-5a9c-8585-52a5a8ca8289)
+    )
+    (pin "5"
+      (uuid 27de5d24-a932-50c2-b92b-69c6dd2ebf5c)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "J5")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 166.37 105.41)
+      (xy 158.75 105.41)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 4935ce55-e2b0-5b30-bc09-cdfd7fa8d8be)
+  )
+  (global_label "DEBUG_TX_MCU"
+    (shape bidirectional)
+    (at 158.75 105.41 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 366ee999-0fc7-54da-afdd-6ab3bbe00033)
+  )
+  (wire
+    (pts
+      (xy 173.99 105.41)
+      (xy 181.61 105.41)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 8521a89a-5500-5253-8a62-dd433f166036)
+  )
+  (global_label "DEBUG_TX"
+    (shape bidirectional)
+    (at 181.61 105.41 180)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify left)
+    )
+    (uuid 28f5a400-6cf4-583e-8b67-adcd7654dc62)
+  )
+  (symbol
+    (lib_id "BackplaneTester:R")
+    (at 170.18 105.41 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid d3bcf3fd-3738-52fc-af19-d8eac29f71bc)
+    (property "Reference" "R26"
+      (at 170.18 100.33 90)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "1k"
+      (at 170.18 102.87 90)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 170.18 105.41 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 170.18 105.41 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 728a6d70-f26a-5413-a0c3-151359fb6d01)
+    )
+    (pin "2"
+      (uuid 1d35a97f-78c2-501a-b69c-17c7914dbe3d)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "R26")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 166.37 134.62)
+      (xy 158.75 134.62)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid bc9d8750-119b-5fd6-a632-f5ecf8bbd3cc)
+  )
+  (global_label "DEBUG_RX"
+    (shape bidirectional)
+    (at 158.75 134.62 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 05c9f8c9-6a55-5ee3-a0e6-7bdb78668492)
+  )
+  (wire
+    (pts
+      (xy 173.99 134.62)
+      (xy 181.61 134.62)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid e4314309-dea2-5c4a-a4eb-1f040bbe443f)
+  )
+  (global_label "DEBUG_RX_MCU"
+    (shape bidirectional)
+    (at 181.61 134.62 180)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify left)
+    )
+    (uuid eb117e53-7ec8-5c9d-9157-2fde4ad8b6ff)
+  )
+  (symbol
+    (lib_id "BackplaneTester:R")
+    (at 170.18 134.62 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid d10d9073-dc6a-54ed-bc45-b695d95d1caa)
+    (property "Reference" "R27"
+      (at 170.18 129.54 90)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "1k"
+      (at 170.18 132.08 90)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 170.18 134.62 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 170.18 134.62 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 99cb519f-7ce9-5395-a3e5-5b5d3db5ba47)
+    )
+    (pin "2"
+      (uuid d6045877-6a0c-55c7-a49f-c0482aa37c6f)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "R27")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 240.03 130.81)
+      (xy 240.03 123.19)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 886afd24-b849-5c85-8d64-94c3b3a1bc01)
+  )
+  (global_label "3V3"
+    (shape bidirectional)
+    (at 240.03 123.19 270)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify left)
+    )
+    (uuid 4cca3104-1cbc-51fa-a420-0654647c12af)
+  )
+  (wire
+    (pts
+      (xy 240.03 138.43)
+      (xy 240.03 146.05)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 4630915d-1316-5879-b782-4dac6aa6b2bc)
+  )
+  (global_label "DEBUG_RX_MCU"
+    (shape bidirectional)
+    (at 240.03 146.05 90)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 1185b158-a595-5413-8613-c20efbc64746)
+  )
+  (symbol
+    (lib_id "BackplaneTester:R")
+    (at 240.03 134.62 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 5c98d112-66ac-5eb8-bd4f-f34dec933b0b)
+    (property "Reference" "R28"
+      (at 242.57 133.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "10k"
+      (at 242.57 135.89 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 240.03 134.62 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 240.03 134.62 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid b194a308-b7cf-52fe-9aa1-7117cc2d4df2)
+    )
+    (pin "2"
+      (uuid 52d992cd-41d0-5565-abfb-b130c445c959)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "R28")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (text "Adapter RX <- J5.2 (card TX)\nAdapter TX -> J5.3 (card RX)\n3.3 V logic; card powered by USB\nJ5.4 = open-drain reset control\nJ5.5 = optional 3.3 V BOOT0 control"
+    (at 284.48 105.41 0)
+    (effects
+      (font
+        (size 1.3 1.3)
+      )
+      (justify left)
+    )
+    (uuid aab398c7-6829-53df-8b32-e433b89a3ddf)
+  )
+  (wire
+    (pts
+      (xy 59.69 190.5)
+      (xy 52.07 190.5)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 7edef222-2fb1-56ed-947c-6866db202352)
+  )
+  (global_label "3V3"
+    (shape bidirectional)
+    (at 52.07 190.5 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid f70db03c-2a1f-50fd-a86f-3978794b7f84)
+  )
+  (wire
+    (pts
+      (xy 59.69 193.04)
+      (xy 52.07 193.04)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 9dbd16e4-35b1-5f54-a2d8-d09e3edde7f6)
+  )
+  (global_label "SWDIO"
+    (shape bidirectional)
+    (at 52.07 193.04 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid c2a87290-86e7-5e77-9f13-89334a9490e8)
+  )
+  (wire
+    (pts
+      (xy 59.69 195.58)
+      (xy 52.07 195.58)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 1e2ca265-ed31-5013-900c-2051650ca859)
+  )
+  (global_label "SWCLK"
+    (shape bidirectional)
+    (at 52.07 195.58 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid f4115053-e88d-56d9-90aa-7f16b8e5f11e)
+  )
+  (wire
+    (pts
+      (xy 59.69 198.12)
+      (xy 52.07 198.12)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid cdaea0a2-cc2d-51c0-8e13-9922d82abb9f)
+  )
+  (global_label "GND"
+    (shape bidirectional)
+    (at 52.07 198.12 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 6cb6d0b1-30fc-5720-bf07-cca78c509c51)
+  )
+  (wire
+    (pts
+      (xy 59.69 200.66)
+      (xy 52.07 200.66)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid bc2e87ba-9989-599b-8afc-3a2fc25f630e)
+  )
+  (global_label "NRST"
+    (shape bidirectional)
+    (at 52.07 200.66 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 715c8d2b-21c9-5d9a-9e71-e41cbe536d24)
+  )
+  (symbol
+    (lib_id "BackplaneTester:Conn_01x05")
+    (at 64.77 195.58 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid f1429f13-dbd4-582e-8164-19db13973876)
+    (property "Reference" "J4"
+      (at 69.85 190.5 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "SWD / CUSTOM PIN ORDER"
+      (at 69.85 193.04 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
+      (at 64.77 195.58 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 64.77 195.58 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 7a17ef27-81dd-5536-b01a-6d4b07255504)
+    )
+    (pin "2"
+      (uuid 5e26bf13-3c53-5e27-9cf6-6cbd1ca33bbb)
+    )
+    (pin "3"
+      (uuid 53c76004-2fbb-5b0c-9a2a-42ca02f9ce49)
+    )
+    (pin "4"
+      (uuid 1b8e86e1-07c8-5dbc-b31e-f99054fc78eb)
+    )
+    (pin "5"
+      (uuid 1dc7c997-9e40-5ee1-a4b7-4035dbd59d4b)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "J4")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 171.45 195.58)
+      (xy 163.83 195.58)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid aae3bdd6-8c59-53ac-9d21-20f840e56aef)
+  )
+  (global_label "STATUS_LED"
+    (shape bidirectional)
+    (at 163.83 195.58 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid e64bb2d3-498e-5b42-8390-c5ea04e1da47)
+  )
+  (wire
+    (pts
+      (xy 179.07 195.58)
+      (xy 186.69 195.58)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 762ba9bb-2584-5660-9b3f-366d0eb75a67)
+  )
+  (global_label "LED_A"
+    (shape bidirectional)
+    (at 186.69 195.58 180)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify left)
+    )
+    (uuid 40c43f6d-c410-5461-bca7-569d4d1ce50c)
+  )
+  (symbol
+    (lib_id "BackplaneTester:R")
+    (at 175.26 195.58 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 861077b4-daca-5f3e-9e2f-545d2c3512ac)
+    (property "Reference" "R18"
+      (at 175.26 190.5 90)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "2.2k"
+      (at 175.26 193.04 90)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 175.26 195.58 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 175.26 195.58 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 9779b45a-d8d6-53f5-964e-18f38be8f2e6)
+    )
+    (pin "2"
+      (uuid 4287def1-49da-5ef0-a52d-292adeca214c)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "R18")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 231.14 195.58)
+      (xy 223.52 195.58)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 50e65b52-fe62-5f63-a262-a97e2d98f867)
+  )
+  (global_label "GND"
+    (shape bidirectional)
+    (at 223.52 195.58 0)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid d4d5246e-f8fd-5b69-9d1f-049521914d3f)
+  )
+  (wire
+    (pts
+      (xy 238.76 195.58)
+      (xy 246.38 195.58)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 597d3722-37ed-5b46-b394-7bfac3b75109)
+  )
+  (global_label "LED_A"
+    (shape bidirectional)
+    (at 246.38 195.58 180)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify left)
+    )
+    (uuid 19810260-aa82-54ae-9086-73168c599073)
+  )
+  (symbol
+    (lib_id "BackplaneTester:LED")
+    (at 234.95 195.58 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 36a299c4-bc67-53b1-9b7f-f8b6b8e1294d)
+    (property "Reference" "D1"
+      (at 240.03 190.5 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "STATUS / GREEN"
+      (at 240.03 193.04 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "LED_SMD:LED_0603_1608Metric"
+      (at 234.95 195.58 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 234.95 195.58 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 439f630e-06a6-50df-96b0-a8cc4339621e)
+    )
+    (pin "2"
+      (uuid ca36701f-33d2-5fb2-91f8-73a61869f42b)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "D1")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (text "Fit JP1 (BOOT0 high), press SW1:\nROM USART1 bootloader / 8E1.\nRemove JP1 and reset: application.\nApplication debug logs: proposed 115200 8N1."
+    (at 284.48 190.5 0)
+    (effects
+      (font
+        (size 1.3 1.3)
+      )
+      (justify left)
+    )
+    (uuid 0562e213-56bb-5dcb-a81e-77a81394a28a)
+  )
+  (wire
+    (pts
+      (xy 44.45 260.35)
+      (xy 44.45 267.97)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 4020b123-d671-5b80-8947-7583e3ef0813)
+  )
+  (global_label "GND"
+    (shape bidirectional)
+    (at 44.45 267.97 90)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 05c7572b-e8d2-5e3c-9788-3c804ae245ba)
+  )
+  (symbol
+    (lib_id "BackplaneTester:TestPoint")
+    (at 44.45 260.35 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid ea08e325-6df6-58d3-ada4-2c45a04b3065)
+    (property "Reference" "TP1"
+      (at 49.53 255.27 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "GND"
+      (at 49.53 257.81 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+      (at 44.45 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 44.45 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 114714ae-1e15-59ab-82ea-7e9edc4713e8)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "TP1")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 95.25 260.35)
+      (xy 95.25 267.97)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid a4867866-b960-5ac2-b706-916d43d2fba9)
+  )
+  (global_label "USB_5V"
+    (shape bidirectional)
+    (at 95.25 267.97 90)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 39dfbf4f-7a59-55d2-a3e0-e9f1c45d95dd)
+  )
+  (symbol
+    (lib_id "BackplaneTester:TestPoint")
+    (at 95.25 260.35 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid b77e7a1c-690b-5b38-b161-a638d2f6d0ea)
+    (property "Reference" "TP2"
+      (at 100.33 255.27 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "USB_5V"
+      (at 100.33 257.81 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+      (at 95.25 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 95.25 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 63556029-7b0a-5122-b23d-0c7bf9718e5c)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "TP2")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 144.78 260.35)
+      (xy 144.78 267.97)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid db7f2d78-b6cc-57d8-b8cb-bed13a7fba97)
+  )
+  (global_label "3V3"
+    (shape bidirectional)
+    (at 144.78 267.97 90)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 0e1dc9e3-d3a9-596c-b8b4-e4ec6de331f7)
+  )
+  (symbol
+    (lib_id "BackplaneTester:TestPoint")
+    (at 144.78 260.35 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 673c0d52-288e-5e82-801f-7640217ba8d5)
+    (property "Reference" "TP3"
+      (at 149.86 255.27 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "3V3"
+      (at 149.86 257.81 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+      (at 144.78 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 144.78 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid f9810dea-dabc-53ec-895f-7c2977bf0fb5)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "TP3")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 214.63 260.35)
+      (xy 214.63 267.97)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 1bf6d63b-87cb-5ffe-92b4-9906f74e7b01)
+  )
+  (global_label "MUX_DISABLE"
+    (shape bidirectional)
+    (at 214.63 267.97 90)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid c709ca6b-2497-5992-ac87-08d2881b7edc)
+  )
+  (symbol
+    (lib_id "BackplaneTester:TestPoint")
+    (at 214.63 260.35 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 01cf01c3-895f-52a9-8cb2-35f0f0b3be35)
+    (property "Reference" "TP6"
+      (at 219.71 255.27 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "MUX_DISABLE"
+      (at 219.71 257.81 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+      (at 214.63 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 214.63 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 0623f270-f174-5e30-b8b2-a12b0f0f92e0)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "TP6")
+          (unit 1)
+        )
+      )
+    )
+  )
+  (wire
+    (pts
+      (xy 284.48 260.35)
+      (xy 284.48 267.97)
+    )
+    (stroke
+      (width 0)
+      (type default)
+    )
+    (uuid 7044dd25-c629-5755-808b-b5fe947b4fe5)
+  )
+  (global_label "NRST"
+    (shape bidirectional)
+    (at 284.48 267.97 90)
+    (effects
+      (font
+        (size 0.9 0.9)
+      )
+      (justify right)
+    )
+    (uuid 96d57f02-b673-515a-b39a-e097400229c7)
+  )
+  (symbol
+    (lib_id "BackplaneTester:TestPoint")
+    (at 284.48 260.35 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid 626dd4e7-c2e8-5d85-842e-c25a66b8cd65)
+    (property "Reference" "TP7"
+      (at 289.56 255.27 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Value" "NRST"
+      (at 289.56 257.81 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+      )
+    )
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+      (at 284.48 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "~"
+      (at 284.48 260.35 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (hide yes)
+      )
+    )
+    (pin "1"
+      (uuid 395c18d7-aaea-5cde-aec3-c6bb791ab754)
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57/0c305c31-00ff-5d9d-a32f-3bb5b82185e9"
+          (reference "TP7")
+          (unit 1)
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,364 @@
+(kicad_sch
+  (version 20250114)
+  (generator "backplane_tester_design")
+  (uuid 513486c8-99b7-5e90-933b-53cee4f90e57)
+  (paper "A3")
+  (title_block
+    (title "Two-card 100-contact backplane tester")
+    (date "2026-10-27")
+    (rev "C")
+    (company "Norsk Data restoration")
+  )
+  (lib_symbols)
+  (text "BACKPLANE CONTINUITY TESTER / IDENTICAL USB-CONTROLLED CARDS"
+    (at 20 20 0)
+    (effects
+      (font
+        (size 2.5 2.5)
+      )
+      (justify left)
+    )
+    (uuid 64bb95e7-8345-52f9-9186-d5778da7a0c4)
+  )
+  (text "STM32F103C8T6 + seven 16:1 contact muxes + one bank-select mux. Bare, unpowered backplane only."
+    (at 20 32 0)
+    (effects
+      (font
+        (size 1.4 1.4)
+      )
+      (justify left)
+    )
+    (uuid f3fb2c6d-e25a-55a5-8b05-845086055f61)
+  )
+  (sheet
+    (at 25 55)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid 8f47acca-7597-5ac5-9151-c8c63e3f3fa2)
+    (property "Sheetname" "STM32 controller and support"
+      (at 25 52.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "controller.kicad_sch"
+      (at 25 87.53999999999999 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "2")
+        )
+      )
+    )
+  )
+  (sheet
+    (at 220 55)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid bb033bd2-246e-575f-b894-880f589e818f)
+    (property "Sheetname" "USB and 3.3 V supply"
+      (at 220 52.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "usb-power.kicad_sch"
+      (at 220 87.53999999999999 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "3")
+        )
+      )
+    )
+  )
+  (sheet
+    (at 25 100)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid 240fe0df-0897-580a-a109-dc931704f9a4)
+    (property "Sheetname" "Stimulus and ADC"
+      (at 25 97.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "measurement.kicad_sch"
+      (at 25 132.54 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "4")
+        )
+      )
+    )
+  )
+  (sheet
+    (at 220 100)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid 0c305c31-00ff-5d9d-a32f-3bb5b82185e9)
+    (property "Sheetname" "Ground and programming"
+      (at 220 97.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "programming.kicad_sch"
+      (at 220 132.54 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "5")
+        )
+      )
+    )
+  )
+  (sheet
+    (at 25 145)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid f5b71d96-29f3-509f-98e5-dc30d469d02b)
+    (property "Sheetname" "Contact muxes - banks 0-1"
+      (at 25 142.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "mux-banks-0-1.kicad_sch"
+      (at 25 177.54 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "6")
+        )
+      )
+    )
+  )
+  (sheet
+    (at 220 145)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid d5296efc-a6e5-5370-8999-b46304200f21)
+    (property "Sheetname" "Contact muxes - banks 2-3"
+      (at 220 142.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "mux-banks-2-3.kicad_sch"
+      (at 220 177.54 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "7")
+        )
+      )
+    )
+  )
+  (sheet
+    (at 25 190)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid 3434fa4f-c921-5a32-9cb9-dc3c8d861d0c)
+    (property "Sheetname" "Contact muxes - banks 4-5"
+      (at 25 187.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "mux-banks-4-5.kicad_sch"
+      (at 25 222.54 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "8")
+        )
+      )
+    )
+  )
+  (sheet
+    (at 220 190)
+    (size 160 30)
+    (stroke
+      (width 0.254)
+      (type default)
+    )
+    (fill
+      (color 0 0 0 0)
+    )
+    (uuid 6f02a176-9928-5049-a3cc-6476d83a4f12)
+    (property "Sheetname" "Contact bank 6 and root mux"
+      (at 220 187.46 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (property "Sheetfile" "mux-bank-6-root.kicad_sch"
+      (at 220 222.54 0)
+      (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left)
+      )
+    )
+    (instances
+      (project "backplane-tester"
+        (path "/513486c8-99b7-5e90-933b-53cee4f90e57"
+          (page "9")
+        )
+      )
+    )
+  )
+  (text "CONNECTIONS: global labels join sheets. J3 is a single ground wire. Both USB links coordinate selection and sampling."
+    (at 20 250 0)
+    (effects
+      (font
+        (size 1.3 1.3)
+      )
+      (justify left)
+    )
+    (uuid 1615de4b-e357-5aa1-ae91-a304a72dd460)
+  )
+  (text "PROGRAMMING: J5 = 3.3 V USART1 debug/ROM bootloader; JP1 + reset selects ROM boot. J4 retains SWD."
+    (at 20 260 0)
+    (effects
+      (font
+        (size 1.3 1.3)
+      )
+      (justify left)
+    )
+    (uuid a0f169bb-1371-5f36-8278-eedaec1fa1a1)
+  )
+  (text "MECHANICAL HOLD: J1 is logical only; real contact numbering and connector footprint must be measured before PCB layout."
+    (at 20 270 0)
+    (effects
+      (font
+        (size 1.3 1.3)
+      )
+      (justify left)
+    )
+    (uuid 68e58112-f8ce-5661-891c-f1787061c820)
+  )
+  (sheet_instances
+    (path "/"
+      (page "1")
+    )
+  )
+)

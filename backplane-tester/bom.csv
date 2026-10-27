@@ -1,0 +1,30 @@
+references,quantity_per_board,value_or_part,package,manufacturer,notes
+U1,1,STM32F103C8T6,LQFP48 7x7mm 0.5mm pitch,ST,MCU; 64KiB flash; USB; ADC
+U2 U3 U4 U5 U6 U7 U8 U9,8,CD74HC4067M,SOIC24 wide 7.5mm body,TI,HC; 3.3V; verify exact footprint
+U10,1,MCP1700T-3302E/TT,SOT23-3,Microchip,3.3V LDO; pin1 GND pin2 OUT pin3 IN
+U11,1,USBLC6-2SC6,SOT23-6,ST,USB ESD; connector placement
+Q1,1,BC857B,SOT23,Nexperia or verified equivalent,PNP USB pullup switch; B1 E2 C3
+Y1,1,8MHz crystal,TBD,TBD,Choose CL/ESR; confirm C8/C9 and oscillator margin
+J1,1,100-contact backplane interface,TBD from real card,TBD,Mechanical outline and physical pin labels unverified
+J2,1,USB Micro-B receptacle,TBD,TBD,5 signal pins plus shield; through-hole shell tabs preferred
+J3,1,Single inter-board GND attachment,1x1 pin or wire attachment,Generic,One ground wire to other card; no data or supply connections
+J4,1,1x5 SWD header,2.54mm header,Generic,Custom order: 3V3 SWDIO SWCLK GND NRST
+J5,1,1x5 debug and serial bootloader header,2.54mm header,Generic,GND DEBUG_TX DEBUG_RX NRST BOOT0; 3.3V logic; no power pin
+JP1,1,BOOT0 jumper,2.54mm 1x2,Generic,Normally open for application; fitted for BOOT0 high then reset into factory serial bootloader
+SW1,1,Reset button,TBD,Generic,Normally open to ground
+D1,1,Green LED,0603,Generic,Status; anode fed through R18
+R1 R11 R15 R16 R17 R24 R28,7,10k 1%,0603,Generic,Mux disable; bias upper; reset; boot; USB; USART1 RX idle-high pullup
+R2 R3 R4 R5 R6 R7 R8 R21 R22 R23,10,100k 1%,0603,Generic,Address pulldowns; VBUS divider; Q1 base pullup
+R9 R26 R27,3,1k 1%,0603,Generic,Drive upper; J5 debug/bootloader UART series
+R10 R25,2,1.5k 1%,0603,Generic,Drive lower; USB pullup
+R12,1,15k 1%,0603,Generic,Bias lower
+R13,1,100ohm 1%,0603,Generic,ADC series
+R14,1,0ohm,0603,Generic,VDDA supply link
+R18,1,2.2k 1%,0603,Generic,LED series
+R19 R20,2,22ohm,0603,Generic,USB series; provisionally fitted; review signal quality
+C1,1,1nF C0G,0603,Generic,ADC reservoir
+C2 C3 C4 C5 C6 C10 C14 C15 C16 C17 C18 C19 C20 C21 C22,15,100nF X7R 16V,0603,Generic,MCU; reset; mux bypass; C22 USB ESD VBUS bypass
+C7 C11,2,1uF X7R 16V,0603,Generic,VDDA and LDO input
+C8 C9,2,18pF C0G provisional,0603,Generic,Recalculate for selected Y1
+C12 C13,2,4.7uF X7R 10V,0805,Generic,LDO output and distributed bulk; check DC bias and USB inrush
+TP1 TP2 TP3 TP4 TP5 TP6 TP7,7,Test point,TBD,Generic,GND USB_5V 3V3 MEAS ADC_SENSE MUX_DISABLE NRST
