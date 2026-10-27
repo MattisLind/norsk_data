@@ -56,7 +56,7 @@ module status(
 	output reg	TERM,
 	output [5:0]	SHC,
 	output		ASHM,
-	output		BSHM,
+	output reg	BSHM,
 	output		ASHX,
 	output		BSHX,
 	output [7:0]	STS,

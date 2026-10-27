@@ -17,7 +17,8 @@ VFLAGS=-Wno-fatal -Wall # -DDBGCNT
 
 TOP=nord10s.v
 SRCS=nord10s.v timing.v prom4k.v or_logic.v regs.v decoding.v int_regs.v \
-	arithmetic.v
+	arithmetic.v status.v int_ctrl.v panel_transceiver.v lamp_register.v \
+	panel_control.v
 
 all:  ${DEST} # ${TDEST}
 

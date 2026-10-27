@@ -70,16 +70,18 @@ module nord10s (
 	wire		MPCLD, ACR16, BCR16, ASH0, ASH15, AZERO, BZERO;
 	wire		AC0, AC15, ASHX, ASHM, AAKL, BAKL, ACKL, BCKL;
 	wire		ACR0, BCR0, BSH0, BSH15, BC0, BC15, BSHX, BSHM;
-	wire		SHKL, BCR16, SKL, BSH6, STSRD, BAKL, WSHC, SHCKL;
-	wire		SI, WREN, IODEST, TERM, TRR, TRA, TR6, TR7;
+	wire		SHKL, SKL, BSH6, STSRD, WSHC, SHCKL;
+	wire		SI, WREN, IODEST, TERM, TRR, TRA, TR0, TR2, TR6, TR7;
+	wire		TR9, TR10;
 	wire		BMSRC, PILKL, WSCR;
 	wire		T3_ic, T3_dec;
 	wire [31:0]	ROM, MIR;
-	wire [15:0]	MPC, ASUM, BSUM;
+	wire [15:0]	ASUM, BSUM;
 	wire [11:0]	MPC;
 	wire [7:0]	STS;
 	wire [5:0]	SHC;
 	wire [3:0]	LEV;
+	wire [3:0]	PIL;
 	wire [2:0]	SL;
 	wire [1:0]	ASHS, BSHS;
 
@@ -89,8 +91,30 @@ module nord10s (
 	wire		ALT = 0, SIR9 = 0, CIKL = 0, HSEL = 0, HX = 0;
 	wire		AEN = 0, HKL = 0, LSEL = 0, MOPC = 0;
 	wire		RKL = 0, RLD = 0, CPCLR = 0, CPLD = 0, CPKL = 0;
-	wire [15:0]	IR = 0;
-	wire [3:0]	PIL = 0;
+	wire [15:0]	IR;
+
+	/*
+	 * Panel backplane, first wiring pass. CPU-facing signals use the
+	 * existing active-high convention, without the drawings' _0/_1 phases.
+	 * See doc/front-panel-backplane.md for sources and missing producers.
+	 */
+	wire [3:0]	PL, RC;
+	wire		TRA0, TRR0, COINC, DECODE, OSC;
+	wire		panel_MCL, STOP, IMINH, IPFINT, panel_MDRY_hold;
+
+	/* TODO: these producers are absent from the current CPU model. */
+	wire [17:0]	BA = 18'b0, MR = 18'b0;
+	wire [1:0]	PCR = 2'b0;
+	wire		PON = 1'b0, ION = 1'b0, FETCH = 1'b0;
+	wire		MDRY = 1'b0, DMA = 1'b0;
+	wire		BREFRESH = 1'b0, BREQ = 1'b0;
+	wire		MINH = 1'b0, PFINT = 1'b0;
+	wire [15:0]	ALD = 16'b0; // TODO: choose physical ALD switch setting
+
+	/* Panel-side endpoints: reserved for the later hardware adapter. */
+	wire		SCL_1, SLD_0, SOUT_0, WL20_0, WL21_0;
+	wire [17:0]	WL_0;
+	wire [3:0]	SWL_0;
 
 	/* THESE ARE WITHOUT ENDPOINTS */
 	wire		T1, T5, ROMRQ;
@@ -116,7 +140,9 @@ wire [3:0] state;
 
 	/* "OR" for IB */
 	wire [15:0]	IB, IB_mic, IB_regs, IB_status, IB_intregs;
-	assign IB = IB_mic | IB_regs | IB_status | IB_intregs;
+	wire [15:0]	IB_panel_transceiver, IB_panel_control;
+	assign IB = IB_mic | IB_regs | IB_status | IB_intregs |
+	    IB_panel_transceiver | IB_panel_control;
 
 
 	/*
@@ -131,7 +157,7 @@ wire [3:0] state;
 		mclcnt <= { 1'b0, mclcnt[1] };
 		mclrst <= ~n_rst;
 	end
-	wire MCL = |mclcnt | mclrst;
+	assign MCL = |mclcnt | mclrst | panel_MCL;
 
 
 	/* card #1, Status logic, 1062 */ 
@@ -210,9 +236,10 @@ wire [3:0] state;
 	timing timing(.clk(clk), .MCL(MCL),
 	    .PRIVINT(PRIVINT), .INT(INT), .OPCOM(OPCOM), .OPINT(OPINT),
 	    .ROM3130(ROM[31:30]), .MIR(MIR), .DBL(DBL), .ROMDRY(ROMDRY),
-	    .ACTLOOP(ACTLOOP), .IODEST(IODEST),
+	    .ACTLOOP(ACTLOOP), .IODEST(IODEST), .IR3_0(IR[3:0]),
 
-	    .TR6(TR6), .TR7(TR7), .T3_ic(T3_ic), .T3_dec(T3_dec),
+	    .TRA(TRA), .TR0(TR0), .TR2(TR2), .TR6(TR6), .TR7(TR7),
+	    .TR9(TR9), .TR10(TR10), .T3_ic(T3_ic), .T3_dec(T3_dec),
 	    .ACKL(ACKL), .BCKL(BCKL), .SHKL(SHKL), .STSRD(STSRD), .TRR(TRR),
 	    .MIRKL(MIRKL), .MPCLD(MPCLD), .AAKL(AAKL), .BAKL(BAKL),
 	    .ROMRQ(ROMRQ), .T1(T1), .T5(T5), .MPCKL(MPCKL), .MIRDRY(MIRDRY),
@@ -229,7 +256,44 @@ wire [3:0] state;
 	int_regs int_regs(.clk(clk), .MCL(MCL),
 		.TRR(TRR), .TR6(TR6), .TR7(TR7), .IB(IB), .PILKL(PILKL),
 
-		.IB_ut(IB_intregs));
+		.IB_ut(IB_intregs), .PIL(PIL));
+
+	/*
+	 * Panel interface cards; physical slot positions not established here.
+	 * These are partial models: no button sequencing or serial engine yet.
+	 * Raw panel inputs are parked high until the adapter ports are added.
+	 */
+	panel_transceiver panel_transceiver(.clk(clk), .MCL(MCL),
+		.IB_in(IB), .PL(PL), .PON(PON), .ION(ION), .PCR(PCR),
+		.TRA(TRA), .TR2(TR2), .TRA0(TRA0), .TRR0(TRR0),
+		.MINH(MINH), .PFINT(PFINT),
+		.SW_0(1'b1), .SREG_0(1'b1),
+		.WUP_1(1'b1), .WUP_0(1'b1),
+		.WDOWN_1(1'b1), .WDOWN_0(1'b1),
+
+		.IB_ut(IB_panel_transceiver), .RC(RC), .COINC(COINC),
+		.OSC(OSC), .IMINH(IMINH), .IPFINT(IPFINT),
+		.SCL_1(SCL_1), .SLD_0(SLD_0), .SOUT_0(SOUT_0),
+		.WL20_0(WL20_0), .WL21_0(WL21_0));
+
+	lamp_register lamp_register(.clk(clk), .MCL(MCL),
+		.IB(IB), .BA(BA), .RC(RC), .PL(PL), .TRR(TRR), .TR2(TR2),
+		.DECODE(DECODE), .FETCH(FETCH), .DMA(DMA), .MDRY(MDRY),
+		.BREFRESH(BREFRESH), .BREQ(BREQ), .OSC(OSC),
+
+		.WL_0(WL_0));
+
+	panel_control panel_control(.clk(clk), .reset(|mclcnt | mclrst),
+		.IB_in(IB), .MR(MR), .PIL(PIL), .PON(PON), .COINC(COINC),
+		.TRA(TRA), .TRR(TRR), .TR0(TR0), .TR2(TR2),
+		.TR9(TR9), .TR10(TR10), .FETCH(FETCH), .MDRY(MDRY),
+		.IMINH(IMINH), .RC3(RC[3]), .ALD(ALD),
+		.PB_15_4(12'hfff), .SWREST_0(1'b1),
+		.SWMCL_0(1'b1), .PLOCK_0(1'b1),
+
+		.IB_ut(IB_panel_control), .PL(PL), .TRA0(TRA0), .TRR0(TRR0),
+		.STOP(STOP), .MCL(panel_MCL), .DECODE(DECODE),
+		.MDRY_hold(panel_MDRY_hold), .SWL_0(SWL_0));
 
 
 `ifdef notyet

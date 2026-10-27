@@ -37,7 +37,8 @@ module int_regs (
 	input			PILKL,
 	input [15:0]		IB,
 
-	output [15:0]		IB_ut
+	output [15:0]		IB_ut,
+	output reg [3:0]	PIL
 );
 
 	/*
@@ -66,7 +67,7 @@ module int_regs (
 	wire [1:0] pidpie0 = PK1 ? pidpie1[3:2] : pidpie1[1:0];
 	wire PK0 = pidpie0[1];
 
-	reg [3:0]	PIL, PVL;
+	reg [3:0]	PVL;
 	always @(posedge clk) begin
 		if (PILKL) begin
 			PVL <= PIL;

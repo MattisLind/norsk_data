@@ -34,7 +34,7 @@ module prom4k (
 	input [11:0]		MPC,
 
 	output reg [31:0]	ROM,
-	output 			ROMDRY
+	output reg		ROMDRY
 );
 
 	reg [31:0]	uc_prom4k [4095:0];
